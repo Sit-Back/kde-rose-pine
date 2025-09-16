@@ -8,7 +8,7 @@ help() {
 Usage: ${0##*/} -o <output> -s <source> -f <flavour>
     -o <path> Output directory
     -s <path> Source file
-    -f <flavour>  Flavour name (Mocha, Macchiato, Frappe, Latte)
+    -f <flavour>  Flavour name (Default only for now)
 EOF
   exit 1 # Exit script after printing help
 }

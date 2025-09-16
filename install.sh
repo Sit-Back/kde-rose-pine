@@ -18,9 +18,9 @@ check_command_exists "unzip"
 check_command_exists "lookandfeeltool"
 
 COLORDIR="${XDG_DATA_HOME:-$HOME/.local/share}/color-schemes"
-AURORAEDIR="${XDG_DATA_HOME:-$HOME/.local/share}/aurorae/themes"
-LOOKANDFEELDIR="${XDG_DATA_HOME:-$HOME/.local/share}/plasma/look-and-feel"
-CURSORDIR="${XDG_DATA_HOME:-$HOME/.local/share}/icons"
+AURORAEDIR="$HOME/Downloads"
+LOOKANDFEELDIR="$HOME/Downloads"
+CURSORDIR="$HOME/Downloads"
 
 echo "Creating theme directories.."
 mkdir -p "$COLORDIR" "$AURORAEDIR" "$LOOKANDFEELDIR" "$CURSORDIR"
@@ -38,10 +38,7 @@ if [ -z "$1" ]; then
     cat <<EOF
 
 Choose flavor out of -
-    1. Mocha
-    2. Macchiato
-    3. Frappé
-    4. Latte
+    1. Default
     (Type the number corresponding to said palette)
 EOF
     read -r FLAVOUR
@@ -49,10 +46,7 @@ EOF
 fi
 
 case "$FLAVOUR" in
-    1) FLAVOURNAME="Mocha" ;;
-    2) FLAVOURNAME="Macchiato" ;;
-    3) FLAVOURNAME="Frappe" ;;
-    4) FLAVOURNAME="Latte" ;;
+    1) FLAVOURNAME="Default" ;;
     *)
         echo "Not a valid flavour name: $FLAVOUR"
         exit 1
@@ -87,127 +81,85 @@ fi
 case "$ACCENT" in
     1)
         case "$FLAVOUR" in
-            1) ACCENTCOLOR="245,224,220" ;;
-            2) ACCENTCOLOR="244,219,214" ;;
-            3) ACCENTCOLOR="242,213,207" ;;
-            4) ACCENTCOLOR="220,138,120" ;;
+            1) ACCENTCOLOR="234,154,151" ;;
         esac
         ACCENTNAME="Rosewater"
         ;;
     2)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="242,205,205" ;;
-            2) ACCENTCOLOR="240,198,198" ;;
-            3) ACCENTCOLOR="238,190,190" ;;
-            4) ACCENTCOLOR="221,120,120" ;;
         esac
         ACCENTNAME="Flamingo"
         ;;
     3)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="245,194,231" ;;
-            2) ACCENTCOLOR="245,189,230" ;;
-            3) ACCENTCOLOR="244,184,228" ;;
-            4) ACCENTCOLOR="234,118,203" ;;
         esac
         ACCENTNAME="Pink"
         ;;
     4)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="203,166,247" ;;
-            2) ACCENTCOLOR="198,160,246" ;;
-            3) ACCENTCOLOR="202,158,230" ;;
-            4) ACCENTCOLOR="136,57,239" ;;
         esac
         ACCENTNAME="Mauve"
         ;;
     5)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="243,139,168" ;;
-            2) ACCENTCOLOR="237,135,150" ;;
-            3) ACCENTCOLOR="231,130,132" ;;
-            4) ACCENTCOLOR="210,15,57" ;;
         esac
         ACCENTNAME="Red"
         ;;
     6)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="235,160,172" ;;
-            2) ACCENTCOLOR="238,153,160" ;;
-            3) ACCENTCOLOR="234,153,156" ;;
-            4) ACCENTCOLOR="230,69,83" ;;
         esac
         ACCENTNAME="Maroon"
         ;;
     7)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="250,179,135" ;;
-            2) ACCENTCOLOR="245,169,127" ;;
-            3) ACCENTCOLOR="239,159,118" ;;
-            4) ACCENTCOLOR="254,100,11" ;;
         esac
         ACCENTNAME="Peach"
         ;;
     8)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="249,226,175" ;;
-            2) ACCENTCOLOR="238,212,159" ;;
-            3) ACCENTCOLOR="229,200,144" ;;
-            4) ACCENTCOLOR="223,142,29" ;;
         esac
         ACCENTNAME="Yellow"
         ;;
     9)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="166,227,161" ;;
-            2) ACCENTCOLOR="166,218,149" ;;
-            3) ACCENTCOLOR="166,209,137" ;;
-            4) ACCENTCOLOR="64,160,43" ;;
         esac
         ACCENTNAME="Green"
         ;;
     10)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="148,226,213" ;;
-            2) ACCENTCOLOR="139,213,202" ;;
-            3) ACCENTCOLOR="129,200,190" ;;
-            4) ACCENTCOLOR="23,146,153" ;;
         esac
         ACCENTNAME="Teal"
         ;;
     11)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="137,220,235" ;;
-            2) ACCENTCOLOR="145,215,227" ;;
-            3) ACCENTCOLOR="153,209,219" ;;
-            4) ACCENTCOLOR="4,165,229" ;;
         esac
         ACCENTNAME="Sky"
         ;;
     12)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="116,199,236" ;;
-            2) ACCENTCOLOR="125,196,228" ;;
-            3) ACCENTCOLOR="133,193,220" ;;
-            4) ACCENTCOLOR="32,159,181" ;;
         esac
         ACCENTNAME="Sapphire"
         ;;
     13)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="137,180,250" ;;
-            2) ACCENTCOLOR="138,173,244" ;;
-            3) ACCENTCOLOR="140,170,238" ;;
-            4) ACCENTCOLOR="30,102,245" ;;
         esac
         ACCENTNAME="Blue"
         ;;
     14)
         case "$FLAVOUR" in
             1) ACCENTCOLOR="180,190,254" ;;
-            2) ACCENTCOLOR="183,189,248" ;;
-            3) ACCENTCOLOR="186,187,241" ;;
-            4) ACCENTCOLOR="114,135,253" ;;
         esac
         ACCENTNAME="Lavender"
         ;;
