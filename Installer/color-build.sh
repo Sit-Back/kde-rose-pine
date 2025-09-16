@@ -29,7 +29,7 @@ if [ -z "$OUT" ] || [ -z "$SOURCE" ] || [ -z "$FLAVOURNAME" ]; then
 fi
 
 # no arrays due to posix compliancy
-if echo "$FLAVOURNAME" | grep -Evq 'Mocha|Macchiato|Frappe|Latte'; then
+if echo "$FLAVOURNAME" | grep -Evq 'Default'; then
   clear
   echo "Invalid palette $FLAVOURNAME"
   exit
